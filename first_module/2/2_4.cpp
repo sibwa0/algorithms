@@ -78,7 +78,6 @@ int run(std::istream& input, std::ostream& output) {
         for (int i = 0; i < m; ++i) {
             output << res[i] << " ";
         }
-        // output << std::endl;
     }
 
     delete[] A;
@@ -121,7 +120,7 @@ void testFindIn() {
 }
 
 int main() {
-    testFindIn();
-    // run(std::cin, std::cout);
+    // testFindIn();
+    run(std::cin, std::cout);
     return 0;
 }
