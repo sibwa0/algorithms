@@ -54,21 +54,21 @@ int find_nearest_indexes(int A[], int A_size, int B[], int B_size, int res[], in
 
 
 int run(std::istream& input, std::ostream& output) {
-    output << "Введите кол-во элементов А: " << std::endl;
+    // output << "Введите кол-во элементов А: " << std::endl;
     int n = 0;
     input >> n;
     int* A = new int[n];
-    output << "Введите элементы: " << std::endl;
+    // output << "Введите элементы: " << std::endl;
     for (int i = 0; i < n; ++i) {
         input >> A[i];
     }
 
-    output << "Введите кол-во элементов B: " << std::endl;
+    // output << "Введите кол-во элементов B: " << std::endl;
     int m = 0;
     input >> m;
     int* B = new int[m];
-    output << "Введите элементы: " << std::endl;
-    for (int j = 0; j < n; ++j) {
+    // output << "Введите элементы: " << std::endl;
+    for (int j = 0; j < m; ++j) {
         input >> B[j];
     }
 
@@ -78,7 +78,7 @@ int run(std::istream& input, std::ostream& output) {
         for (int i = 0; i < m; ++i) {
             output << res[i] << " ";
         }
-        output << std::endl;
+        // output << std::endl;
     }
 
     delete[] A;
