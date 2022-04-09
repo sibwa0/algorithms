@@ -1,6 +1,7 @@
 {
     "files.associations": {
-        "iostream": "cpp",
+        "*.c": "c",
+        "*.cpp": "cpp",
         "array": "cpp",
         "atomic": "cpp",
         "bit": "cpp",
@@ -37,12 +38,14 @@
         "utility": "cpp",
         "initializer_list": "cpp",
         "iosfwd": "cpp",
+        "iostream": "cpp",
         "istream": "cpp",
         "limits": "cpp",
         "new": "cpp",
         "numbers": "cpp",
         "ostream": "cpp",
         "ranges": "cpp",
+        "sstream": "cpp",
         "stdexcept": "cpp",
         "streambuf": "cpp",
         "typeinfo": "cpp"
