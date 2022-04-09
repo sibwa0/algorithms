@@ -1,6 +1,7 @@
 #include<cassert>
 #include<iostream>
 #include<sstream>
+#include<queue>
 
 template<class T>
 class Queue {
@@ -115,6 +116,7 @@ void testQueue()
 
 int main()
 {
+	std::queue<int> q;
 	testQueue();
 	// run( std::cin, std::cout );
 	return 0;
