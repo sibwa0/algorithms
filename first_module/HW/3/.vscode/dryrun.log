@@ -1,5 +1,0 @@
-make build --dry-run --keep-going --print-directory
-make: Entering directory '/home/sklaa00/main_course/first/algorithms/first_module/HW/3'
-g++ -g -fdiagnostics-color -Wall -Wextra -Werror -o ./task.out ./tasks/3_1.cpp
-make: Leaving directory '/home/sklaa00/main_course/first/algorithms/first_module/HW/3'
- 

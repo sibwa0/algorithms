@@ -1,4 +1,6 @@
 make all --print-data-base --no-builtin-variables --no-builtin-rules --question
+make: *** No rule to make target 'all'.  Stop.
+
 # GNU Make 4.3
 # Built for x86_64-pc-linux-gnu
 # Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -6,18 +8,16 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sat Apr  9 14:25:33 2022
+# Make data base, printed on Sun Apr 17 07:44:03 2022
 
 # Variables
 
 # environment
-REMOTE_CONTAINERS_SOCKETS = ["/tmp/vscode-ssh-auth-2abd07a4b0a29bf14eaee2be527a1716e91b928c.sock"]
+REMOTE_CONTAINERS_SOCKETS = ["/tmp/vscode-ssh-auth-03b4705fea0ad2ee1d0d2ddb874fc4cf3e2ada49.sock"]
 # environment
 LC_ALL = C
-# makefile (from 'Makefile', line 2)
-SRC = ./tasks/3_1.cpp
 # environment
-VSCODE_CWD = /root/.vscode-server/bin/8dfae7a5cd50421d10cd99cb873990460525a898
+VSCODE_CWD = /root/.vscode-server/bin/dfd34e8260c270da74b5c2d86d61aee4b6d56977
 # default
 MAKE_COMMAND := make
 # automatic
@@ -27,11 +27,11 @@ VSCODE_HANDLES_UNCAUGHT_ERRORS = true
 # default
 .VARIABLES := 
 # environment
-PWD = /home/sklaa00/main_course/first/algorithms/first_module/HW/3
+PWD = /home/sklaa00/main_course/first/algorithms
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
-HOSTNAME = 80ce1f5168ac
+HOSTNAME = 2ac4e34c9c70
 # environment
 XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
 # automatic
@@ -51,7 +51,7 @@ GCC_MIRRORS = https://ftpmirror.gnu.org/gcc 		https://mirrors.kernel.org/gnu/gcc
 # makefile
 MAKEFLAGS = pqrR
 # makefile
-CURDIR := /home/sklaa00/main_course/first/algorithms/first_module/HW/3
+CURDIR := /home/sklaa00/main_course/first/algorithms
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
@@ -61,13 +61,13 @@ APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_AUTH_SOCK = /tmp/vscode-ssh-auth-2abd07a4b0a29bf14eaee2be527a1716e91b928c.sock
+SSH_AUTH_SOCK = /tmp/vscode-ssh-auth-03b4705fea0ad2ee1d0d2ddb874fc4cf3e2ada49.sock
 # default
 .SHELLFLAGS := -c
 # automatic
 +D = $(patsubst %/,%,$(dir $+))
-# makefile (from 'Makefile', line 1)
-MAKEFILE_LIST := Makefile
+# makefile
+MAKEFILE_LIST := 
 # automatic
 @F = $(notdir $@)
 # environment
@@ -93,7 +93,7 @@ MAKELEVEL := 0
 # default
 MAKE = $(MAKE_COMMAND)
 # environment
-PATH = /root/.vscode-server/bin/8dfae7a5cd50421d10cd99cb873990460525a898/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
+PATH = /root/.vscode-server/bin/dfd34e8260c270da74b5c2d86d61aee4b6d56977/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin
 # default
 MAKEFILES := 
 # automatic
@@ -103,7 +103,7 @@ GPG_KEYS = B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793F
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
-REMOTE_CONTAINERS_IPC = /tmp/vscode-remote-containers-ipc-2abd07a4b0a29bf14eaee2be527a1716e91b928c.sock
+REMOTE_CONTAINERS_IPC = /tmp/vscode-remote-containers-ipc-03b4705fea0ad2ee1d0d2ddb874fc4cf3e2ada49.sock
 # environment
 REMOTE_CONTAINERS = true
 # automatic
@@ -113,11 +113,11 @@ REMOTE_CONTAINERS = true
 # 'override' directive
 GNUMAKEFLAGS := 
 # environment
-BROWSER = /root/.vscode-server/bin/8dfae7a5cd50421d10cd99cb873990460525a898/bin/helpers/browser.sh
+BROWSER = /root/.vscode-server/bin/dfd34e8260c270da74b5c2d86d61aee4b6d56977/bin/helpers/browser.sh
 # environment
 GCC_VERSION = 11.2.0
 # makefile
-.DEFAULT_GOAL := all
+.DEFAULT_GOAL := 
 # default
 MAKE_VERSION := 4.3
 # environment
@@ -127,7 +127,7 @@ VSCODE_AGENT_FOLDER = /root/.vscode-server
 # environment
 _ = /bin/cat
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-ddec877f-04a1-461d-bb1a-61c70c4d1468.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-d41086fb-224d-4cce-93af-4582d2dca56a.sock
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -138,12 +138,10 @@ HOME = /root
 <F = $(notdir $<)
 # default
 SUFFIXES := 
-# makefile (from 'Makefile', line 1)
-TARGET = ./task.out
 # default
 .FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
 # variable set hash-table stats:
-# Load=66/1024=6%, Rehash=0, Collisions=10/100=10%
+# Load=64/1024=6%, Rehash=0, Collisions=8/91=9%
 
 # Pattern-specific Variable Values
 
@@ -151,9 +149,9 @@ TARGET = ./task.out
 
 # Directories
 
-# . (device 164, inode 166729): 7 files, no impossibilities.
+# . (device 170, inode 148483): 6 files, no impossibilities.
 
-# 7 files, no impossibilities in 1 directories.
+# 6 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -161,56 +159,12 @@ TARGET = ./task.out
 
 # Files
 
-check:
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
-#  Implicit/static pattern stem: ''
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# automatic
-# @ := check
-# automatic
-# * := 
-# automatic
-# < := 
-# automatic
-# + := 
-# automatic
-# % := 
-# automatic
-# ^ := 
-# automatic
-# ? := 
-# automatic
-# | := 
-# variable set hash-table stats:
-# Load=8/32=25%, Rehash=0, Collisions=1/12=8%
-#  recipe to execute (from 'Makefile', line 9):
-	./run_linters.sh $(SRC)
-
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-09 14:25:30.801953
-#  File has been updated.
-#  Successfully updated.
-
-memtest: build
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 21):
-	valgrind $(TARGET)
-	rm .out
-
-clean:
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
 #  File does not exist.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 18):
-	rm .out
+#  File has been updated.
+#  Failed to be updated.
 
 # Not a target:
 .DEFAULT:
@@ -218,58 +172,41 @@ clean:
 #  Modification time never checked.
 #  File has not been updated.
 
-all: check build run memtest
-#  Phony target (prerequisite of .PHONY).
+# Not a target:
+all:
 #  Command line target.
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has been updated.
-#  Needs to be updated (-q is set).
-# variable set hash-table stats:
-# Load=0/32=0%, Rehash=0, Collisions=0/4=0%
-
-run:
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
+#  Implicit rule search has been done.
 #  File does not exist.
 #  File has not been updated.
-#  recipe to execute (from 'Makefile', line 15):
-	$(TARGET)
-
-build:
-#  Phony target (prerequisite of .PHONY).
-#  Implicit rule search has not been done.
-#  File does not exist.
-#  File has not been updated.
-#  recipe to execute (from 'Makefile', line 12):
-	$(CXX) -g -fdiagnostics-color -Wall -Wextra -Werror -o $(TARGET) $(SRC)
 
 # Not a target:
-.SUFFIXES:
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+makefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
 
-.PHONY: all check build run clean
-#  Implicit rule search has not been done.
-#  Modification time never checked.
-#  File has not been updated.
+# Not a target:
+GNUmakefile:
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Failed to be updated.
 
 # files hash-table stats:
-# Load=10/1024=1%, Rehash=0, Collisions=0/37=0%
+# Load=6/1024=1%, Rehash=0, Collisions=0/15=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
- 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 18 / storage = 147 B / avg = 8 B
-# current buf: size = 8162 B / used = 147 B / count = 18 / avg = 8 B
+# strcache buffers: 1 (0) / strings = 14 / storage = 126 B / avg = 9 B
+# current buf: size = 8162 B / used = 126 B / count = 14 / avg = 9 B
 
-# strcache performance: lookups = 41 / hit rate = 56%
+# strcache performance: lookups = 17 / hit rate = 17%
 # hash-table stats:
-# Load=18/8192=0%, Rehash=0, Collisions=3/41=7%
-# Finished Make data base on Sat Apr  9 14:25:33 2022
+# Load=14/8192=0%, Rehash=0, Collisions=0/17=0%
+# Finished Make data base on Sun Apr 17 07:44:03 2022
 
  

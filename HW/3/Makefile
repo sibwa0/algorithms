@@ -1,9 +1,9 @@
 TARGET = ./task.out
-SRC = ./tasks/3_1.cpp
+SRC = ./3_1.cpp
 
-.PHONY: all check build run clean
+.PHONY: all check build rebuild run clean full
 
-all: check build run memtest
+all: check build run
 
 check:
 	./run_linters.sh $(SRC)
@@ -11,12 +11,16 @@ check:
 build:
 	$(CXX) -g -fdiagnostics-color -Wall -Wextra -Werror -o $(TARGET) $(SRC)
 
+rebuild: clean build
+
 run:
 	$(TARGET)
 
 clean:
-	rm .out
+	rm *.out
+
+full: build run clean
 
 memtest: build
 	valgrind $(TARGET)
-	rm .out
+	rm *.out
