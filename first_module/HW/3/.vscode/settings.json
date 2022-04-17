@@ -1,0 +1,10 @@
+{
+    "makefile.extensionOutputFolder": "./.vscode",
+    "makefile.launchConfigurations": [
+        {
+            "cwd": "/home/sklaa00/main_course/first/algorithms/first_module/HW/3",
+            "binaryPath": "/home/sklaa00/main_course/first/algorithms/first_module/HW/3/task.out",
+            "binaryArgs": []
+        }
+    ]
+}

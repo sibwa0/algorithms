@@ -3,20 +3,20 @@ SRC = ./tasks/3_1.cpp
 
 .PHONY: all check build run clean
 
-all: check build run
+all: check build run memtest
 
 check:
-    ./run_linters.sh $(SRC)
+	./run_linters.sh $(SRC)
 
 build:
-    $(CXX) -g -fdiagnostics-color -Wall -Wextra -Werror -o $(TARGET) $(SRC)
+	$(CXX) -g -fdiagnostics-color -Wall -Wextra -Werror -o $(TARGET) $(SRC)
 
 run:
-    $(TARGET)
+	$(TARGET)
 
 clean:
-    rm .out
+	rm .out
 
 memtest: build
-    valgrind $(TARGET)
-    rm .out
+	valgrind $(TARGET)
+	rm .out
