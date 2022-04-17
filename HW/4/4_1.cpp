@@ -37,11 +37,11 @@ public:
     bool operator()(const T& l, const T& r) { return l < r; }
 };
 
-// template<typename T>
-// class isLessElement {
-// public:
-//     bool operator()(const T& l, const T& r) { return l < r; }
-// };
+template<typename T>
+class isLessElement {
+public:
+    bool operator()(const T& l, const T& r) { return l.value < r.value; }
+};
 
 template<typename T, typename Compare = DefaultComparator<T>>
 class Heap {
@@ -86,7 +86,7 @@ private:
     void Resize();
 
     // Heap
-    void SiftUp(size_t index, Compare cmp) {
+    void SiftUp(size_t index, Compare cmp = Compare()) {
         while (index > 0) {
         size_t parent = (index - 1) / 2;
         if (cmp(array[index], array[parent])) {
@@ -98,23 +98,23 @@ private:
     }
 
     }
-    void SiftDown(size_t index, Compare cmp) {
+    void SiftDown(size_t index, Compare cmp = Compare()) {
         size_t min_leaf = 0;
-    // mb shoude be "<"
-    while ((index <= size / 2 - 1) /*&& (cmp(array[index], array[2 * index - 1]) || cmp(array[index], array[2 * index - 2]))*/) {
-        size_t left = 2 * index + 1;
-        size_t right = 2 * index + 2;
-        if (cmp(array[index], array[left]) && cmp(array[index], array[right])) {
-            return;
+        // mb shoude be "<"
+        while ((index <= size / 2 - 1) /*&& (cmp(array[index], array[2 * index - 1]) || cmp(array[index], array[2 * index - 2]))*/) {
+            size_t left = 2 * index + 1;
+            size_t right = 2 * index + 2;
+            if (cmp(array[index], array[left]) && cmp(array[index], array[right])) {
+                return;
+            }
+            if (cmp(array[left], array[right])) {
+                min_leaf = left;
+            } else {
+                min_leaf = right;
+            }
+            std::swap(array[index], array[min_leaf]);
+            index = min_leaf;
         }
-        if (cmp(array[left], array[right])) {
-            min_leaf = left;
-        } else {
-            min_leaf = right;
-        }
-        std::swap(array[index], array[min_leaf]);
-        index = min_leaf;
-    }
     }
     void Build() {
         for (ssize_t i = size / 2 - 1; i >= 0; --i) {
@@ -294,7 +294,7 @@ int main() {
     size_t k = 0;
     std::cin >> k;
     std::vector<std::vector<Element>> pArr(k);
-    Heap<Element, DefaultComparator<Element>> heap(k);
+    Heap<Element, isLessElement<Element>> heap(k);
 
     size_t size_arr = 0;
     size_t size_arr_tmp = 0;
