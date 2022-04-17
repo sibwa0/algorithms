@@ -167,8 +167,8 @@ void testFindIn() {
 }
 
 int main() {
-    testFindIn();
-    // run(std::cin, std::cout);
+    // testFindIn();
+    run(std::cin, std::cout);
 
     return 0;
 }

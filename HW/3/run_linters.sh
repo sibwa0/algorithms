@@ -28,6 +28,6 @@ print_header "RUN clang-tidy"
 check_log "clang-tidy $@ -warnings-as-errors=* -extra-arg=-std=c99 --filter=-warnings-as-errors -- " "Error (?:reading|while processing)"
 
 print_header "RUN cpplint"
-check_log "cpplint --extensions=c $@" "Can't open for reading"
+check_log "cpplint $@ --extensions=c" "Can't open for reading"
 
 print_header "SUCCESS"
