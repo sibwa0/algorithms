@@ -6,12 +6,20 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
+<<<<<<< HEAD
 # Make data base, printed on Mon Apr 18 14:14:35 2022
+=======
+# Make data base, printed on Mon Apr 18 14:13:13 2022
+>>>>>>> dfbf194201b003742b3dec2f63015ebc1358074f
 
 # Variables
 
 # environment
+<<<<<<< HEAD
 REMOTE_CONTAINERS_SOCKETS = ["/tmp/vscode-ssh-auth-f7645ac5a28a4811204ebb91e9e555c74131ba9a.sock"]
+=======
+REMOTE_CONTAINERS_SOCKETS = ["/tmp/vscode-ssh-auth-d24a8e818897ab1710dd93a511bd11bf42165eba.sock"]
+>>>>>>> dfbf194201b003742b3dec2f63015ebc1358074f
 # environment
 LC_ALL = C
 # makefile (from 'Makefile', line 2)
@@ -31,7 +39,7 @@ PWD = /home/sklaa00/main_course/first/algorithms/HW/4
 # automatic
 %D = $(patsubst %/,%,$(dir $%))
 # environment
-HOSTNAME = 80ce1f5168ac
+HOSTNAME = 2ac4e34c9c70
 # environment
 XDG_DATA_DIRS = /usr/local/share:/usr/share:/var/lib/snapd/desktop
 # automatic
@@ -55,13 +63,17 @@ CURDIR := /home/sklaa00/main_course/first/algorithms/HW/4
 # environment
 VSCODE_PIPE_LOGGING = true
 # environment
-APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
 # automatic
 *D = $(patsubst %/,%,$(dir $*))
 # environment
 MFLAGS = -pqrR
 # environment
+<<<<<<< HEAD
 SSH_AUTH_SOCK = /tmp/vscode-ssh-auth-f7645ac5a28a4811204ebb91e9e555c74131ba9a.sock
+=======
+SSH_AUTH_SOCK = /tmp/vscode-ssh-auth-d24a8e818897ab1710dd93a511bd11bf42165eba.sock
+>>>>>>> dfbf194201b003742b3dec2f63015ebc1358074f
 # default
 .SHELLFLAGS := -c
 # automatic
@@ -103,7 +115,11 @@ GPG_KEYS = B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793F
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
+<<<<<<< HEAD
 REMOTE_CONTAINERS_IPC = /tmp/vscode-remote-containers-ipc-f7645ac5a28a4811204ebb91e9e555c74131ba9a.sock
+=======
+REMOTE_CONTAINERS_IPC = /tmp/vscode-remote-containers-ipc-d24a8e818897ab1710dd93a511bd11bf42165eba.sock
+>>>>>>> dfbf194201b003742b3dec2f63015ebc1358074f
 # environment
 REMOTE_CONTAINERS = true
 # automatic
@@ -127,7 +143,11 @@ VSCODE_AGENT_FOLDER = /root/.vscode-server
 # environment
 _ = /bin/cat
 # environment
+<<<<<<< HEAD
 VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-ead40c93-1847-4268-9fda-d50350ae0712.sock
+=======
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-75fb2fe7-7056-41b8-9c61-ad07efac3693.sock
+>>>>>>> dfbf194201b003742b3dec2f63015ebc1358074f
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -151,7 +171,7 @@ TARGET = ./task.out
 
 # Directories
 
-# . (device 167, inode 142900): 10 files, no impossibilities.
+# . (device 170, inode 173726): 10 files, no impossibilities.
 
 # 10 files, no impossibilities in 1 directories.
 
@@ -192,7 +212,7 @@ check:
 # Not a target:
 Makefile:
 #  Implicit rule search has been done.
-#  Last modified 2022-04-17 08:15:51.8145588
+#  Last modified 2022-04-17 18:12:27.616353009
 #  File has been updated.
 #  Successfully updated.
 
@@ -282,6 +302,10 @@ rebuild: clean build
 # hash-table stats:
  
 # Load=23/8192=0%, Rehash=0, Collisions=5/54=9%
+<<<<<<< HEAD
 # Finished Make data base on Mon Apr 18 14:14:35 2022
+=======
+# Finished Make data base on Mon Apr 18 14:13:13 2022
+>>>>>>> dfbf194201b003742b3dec2f63015ebc1358074f
 
  

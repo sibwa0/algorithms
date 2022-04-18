@@ -48,14 +48,19 @@ class Heap {
 public:
     // Heap(CArray _array(nullptr, 0, 0), Compare _cmp) :
     //         array(_array), cmp(_cmp) {}
-    Heap(size_t _capacity) : array(nullptr), size(0), capacity(_capacity), cmp(Compare()) {
-        T* array = new T[capacity];
+    Heap(size_t _capacity) : size(0), capacity(_capacity), cmp(Compare()) {
+        array = new T[capacity];
     }
     Heap(T* _array = nullptr, size_t _size = 0, size_t _capacity = 0, Compare _cmp = Compare()) : array(_array), size(_size), capacity(_capacity), cmp(_cmp) {}
     Heap(const Heap&) = delete;
     ~Heap() {
         delete[] array;
     }
+
+    // array
+    T operator[](int index) const { return array[index]; }
+    T& operator[](int index) { return array[index]; }
+    size_t Size() const { return size; }
 
     Heap& operator=(const Heap&) = delete;
 
@@ -69,41 +74,62 @@ public:
         }
         return result;
     }
-	const T& PeekMin() const;
+	const T& PeekMin() const { return array[0]; }
 	// void replaceMin(const T& el);	
-	void Insert(const T& el);
-    size_t Size() const { return size; }
+	void Insert(const T& el) {
+        if (size == capacity) {
+            Resize();
+        }
+        array[0].value = 0;
+        array[size] = el;
+        SiftUp(size);
+        ++size;
+    }
 
 
 private:
-    // CArray array;
+    // CArray array[];
     T* array;
     size_t size;
     size_t capacity;
     Compare cmp;
     
     // without using CArray
-    void Resize();
+    void Resize() {
+        size_t new_capacity = std::max((size_t)DEFAULT, capacity * 2);
+        T* new_array = new T[new_capacity];
+        for (int i = 0; i < size; ++i) {
+            new_array[i] = array[i];
+        }
+        delete[] array;
+        array = new_array;
+        capacity = new_capacity;
+    }
 
     // Heap
     void SiftUp(size_t index, Compare cmp = Compare()) {
         while (index > 0) {
-        size_t parent = (index - 1) / 2;
-        if (cmp(array[index], array[parent])) {
-            std::swap(array[(index - 1) / 2], array[index]);
-            index = parent;
-        } else {
-            return;
+            size_t parent = (index - 1) / 2;
+            if (cmp(array[index], array[parent])) {
+                std::swap(array[(index - 1) / 2], array[index]);
+                index = parent;
+            } else {
+                return;
+            }
         }
     }
-
-    }
+    
     void SiftDown(size_t index, Compare cmp = Compare()) {
         size_t min_leaf = 0;
         // mb shoude be "<"
         while ((index <= size / 2 - 1) /*&& (cmp(array[index], array[2 * index - 1]) || cmp(array[index], array[2 * index - 2]))*/) {
             size_t left = 2 * index + 1;
             size_t right = 2 * index + 2;
+            if (left > capacity && right > capacity) {
+                return;
+            } else if (left > capacity) {
+                
+            }
             if (cmp(array[index], array[left]) && cmp(array[index], array[right])) {
                 return;
             }
@@ -116,6 +142,7 @@ private:
             index = min_leaf;
         }
     }
+
     void Build() {
         for (ssize_t i = size / 2 - 1; i >= 0; --i) {
             SiftDown(i);
@@ -149,10 +176,10 @@ private:
 //     return result;
 // }
 
-template<typename T, typename Compare>
-const T& Heap<T, Compare>::PeekMin() const {
-    return array[0];
-}
+// template<typename T, typename Compare>
+// const T& Heap<T, Compare>::PeekMin() const {
+//     return array[0];
+// }
 
 // high attention to Compare
 // template<typename T, typename Compare>
@@ -175,51 +202,56 @@ const T& Heap<T, Compare>::PeekMin() const {
 //     }
 // }
 
+template<typename T, typename Compare>
+void Heap<T, Compare>::SiftDown(size_t index, Compare cmp) {
+    size_t min_leaf = 0;
+    // mb shoude be "<"
+    while ((index <= size / 2 - 1) /*&& (cmp(array[index], array[2 * index - 1]) || cmp(array[index], array[2 * index - 2]))*/) {
+        size_t left = 2 * index + 1;
+        size_t right = 2 * index + 2;
+        if (left > capacity && right > capacity) {
+            return;
+        } else if (left > capacity) {
+            
+        }
+        if (cmp(array[index], array[left]) && cmp(array[index], array[right])) {
+            return;
+        }
+        if (cmp(array[left], array[right])) {
+            min_leaf = left;
+        } else {
+            min_leaf = right;
+        }
+        std::swap(array[index], array[min_leaf]);
+        index = min_leaf;
+    }
+}
+
 // template<typename T, typename Compare>
-// void Heap<T, Compare>::SiftDown(size_t index, Compare cmp) {
-//     size_t min_leaf = 0;
-//     // mb shoude be "<"
-//     while ((index <= size / 2 - 1) /*&& (cmp(array[index], array[2 * index - 1]) || cmp(array[index], array[2 * index - 2]))*/) {
-//         size_t left = 2 * index + 1;
-//         size_t right = 2 * index + 2;
-//         if (cmp(array[index], array[left]) && cmp(array[index], array[right])) {
-//             return;
-//         }
-//         if (cmp(array[left], array[right])) {
-//             min_leaf = left;
-//         } else {
-//             min_leaf = right;
-//         }
-//         std::swap(array[index], array[min_leaf]);
-//         index = min_leaf;
+// void Heap<T, Compare>::Insert(const T& el) {
+//     if (size == capacity) {
+//         Resize();
 //     }
+//     array[size] = el;
+//     SiftUp(size);
+//     ++size;
 // }
 
-template<typename T, typename Compare>
-void Heap<T, Compare>::Insert(const T& el) {
-    if (size == capacity) {
-        Resize();
-    }
-    array[size] = el;
-    SiftUp(size);
-    ++size;
-}
-
-template<typename T, typename Compare>
-void Heap<T, Compare>::Resize() {
-    int new_capacity = std::max((size_t)DEFAULT, capacity * 2);
-    T* new_array = new T[new_capacity];
-    for (int i = 0; i < size; ++i) {
-        new_array[i] = array[i];
-    }
-    delete[] array;
-    array = new_array;
-    capacity = new_capacity;
-}
+// template<typename T, typename Compare>
+// void Heap<T, Compare>::Resize() {
+//     size_t new_capacity = std::max((size_t)DEFAULT, capacity * 2);
+//     T* new_array = new T[new_capacity];
+//     for (int i = 0; i < size; ++i) {
+//         new_array[i] = array[i];
+//     }
+//     delete[] array;
+//     array = new_array;
+//     capacity = new_capacity;
+// }
 
 
-template<class T, class Compare = DefaultComparator<T> >
-void MergeSort(const std::vector<std::vector<T>>& array, int* result, Compare cmp = DefaultComparator<T>()) {
+template<class T, class Compare = DefaultComparator<T>>
+void MergeSortedArrays(T** array, int* result, Compare cmp = DefaultComparator<T>()) {
 	
 }
 
@@ -293,6 +325,8 @@ int main() {
     // run(std::cin, std::cout);
     size_t k = 0;
     std::cin >> k;
+    // Element** p_arr = new Element*[k];
+
     std::vector<std::vector<Element>> pArr(k);
     Heap<Element, isLessElement<Element>> heap(k);
 
@@ -300,6 +334,7 @@ int main() {
     size_t size_arr_tmp = 0;
     for (size_t i = 0; i < k; ++i) {
         std::cin >> size_arr_tmp;
+        // p_arr[i] = new Element[size_arr_tmp]; 
         size_arr += size_arr_tmp;
         int value = 0;
         pArr[i].resize(size_arr_tmp);
@@ -309,7 +344,8 @@ int main() {
             pArr[i][j].array_index = i;
             pArr[i][j].value_index = j;
         }
-        heap.Insert(pArr[i][0]);
+        Element tmp = pArr[i][0];
+        heap.Insert(tmp);
     }
 
 
