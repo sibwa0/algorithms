@@ -6,12 +6,12 @@ make all --print-data-base --no-builtin-variables --no-builtin-rules --question
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Sun Apr 17 18:07:50 2022
+# Make data base, printed on Mon Apr 18 14:14:35 2022
 
 # Variables
 
 # environment
-REMOTE_CONTAINERS_SOCKETS = ["/tmp/vscode-ssh-auth-fe3a21a5c60a4bea4999f024ef45b951326a501e.sock"]
+REMOTE_CONTAINERS_SOCKETS = ["/tmp/vscode-ssh-auth-f7645ac5a28a4811204ebb91e9e555c74131ba9a.sock"]
 # environment
 LC_ALL = C
 # makefile (from 'Makefile', line 2)
@@ -61,7 +61,7 @@ APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = 1
 # environment
 MFLAGS = -pqrR
 # environment
-SSH_AUTH_SOCK = /tmp/vscode-ssh-auth-fe3a21a5c60a4bea4999f024ef45b951326a501e.sock
+SSH_AUTH_SOCK = /tmp/vscode-ssh-auth-f7645ac5a28a4811204ebb91e9e555c74131ba9a.sock
 # default
 .SHELLFLAGS := -c
 # automatic
@@ -103,7 +103,7 @@ GPG_KEYS = B215C1633BCA0477615F1B35A5B3A004745C015A 	B3C42148A44E6983B3E4CC0793F
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
-REMOTE_CONTAINERS_IPC = /tmp/vscode-remote-containers-ipc-fe3a21a5c60a4bea4999f024ef45b951326a501e.sock
+REMOTE_CONTAINERS_IPC = /tmp/vscode-remote-containers-ipc-f7645ac5a28a4811204ebb91e9e555c74131ba9a.sock
 # environment
 REMOTE_CONTAINERS = true
 # automatic
@@ -127,7 +127,7 @@ VSCODE_AGENT_FOLDER = /root/.vscode-server
 # environment
 _ = /bin/cat
 # environment
-VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-a14ddf0b-5665-4552-9512-a2fa748c7455.sock
+VSCODE_IPC_HOOK_CLI = /tmp/vscode-ipc-ead40c93-1847-4268-9fda-d50350ae0712.sock
 # environment
 VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
 # environment
@@ -282,6 +282,6 @@ rebuild: clean build
 # hash-table stats:
  
 # Load=23/8192=0%, Rehash=0, Collisions=5/54=9%
-# Finished Make data base on Sun Apr 17 18:07:50 2022
+# Finished Make data base on Mon Apr 18 14:14:35 2022
 
  
