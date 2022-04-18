@@ -1,5 +1,7 @@
-make build --dry-run --always-make --keep-going --print-directory
+make --dry-run --always-make --keep-going --print-directory
 make: Entering directory '/home/sklaa00/main_course/first/algorithms/HW/4'
+./run_linters.sh ./4_1.cpp
 g++ -g -fdiagnostics-color -Wall -Wextra -Werror -o ./task.out ./4_1.cpp
+./task.out
 make: Leaving directory '/home/sklaa00/main_course/first/algorithms/HW/4'
  
