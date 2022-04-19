@@ -182,14 +182,15 @@ struct Element {
     size_t array_index;
 };
 
-void SortArrays(CArray<CArray<Element>> array, int* result, size_t full_array_size) {
-    Heap<Element, isLessElement<Element>> heap(array.getCapacity());
+template<typename T, typename Compare = isLessDefault<T>>
+void SortArrays(CArray<CArray<T>> array, int* result, size_t full_array_size) {
+    Heap<T, Compare()> heap(array.getCapacity());
 
 	for (size_t i = 0; i < array.getCapacity(); ++i) {
         heap.insert(array[i][0]);
     }
     for (size_t i = 0; i < full_array_size; ++i) {
-        Element tmp = heap.extractMin();
+        T tmp = heap.extractMin();
         result[i] = tmp.value;
         if (tmp.value_index < array[tmp.array_index].getCapacity() - 1) {
             heap.insert(array[tmp.array_index][tmp.value_index + 1]);
