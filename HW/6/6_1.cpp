@@ -18,11 +18,11 @@ int medium3_value(const T* array, const int& size, Compare cmp) {
     if (cmp(array[end], array[start]) && cmp(array[start], array[mid]) ||
             cmp(array[mid], array[start]) && cmp(array[start], array[end])) {
         return start;
-    } else if (cmp(array[start], array[end]) && cmp(array[end], array[mid]) ||
-            cmp(array[mid], array[end]) && cmp(array[end], array[start])) {
-        return end;
+    } else if (cmp(array[start], array[mid]) && cmp(array[mid], array[end]) ||
+            cmp(array[end], array[mid]) && cmp(array[mid], array[start])) {
+        return mid;
     }
-    return mid;
+    return end;
 }
 
 template<typename T, typename Compare = isLess<T>>
@@ -32,13 +32,6 @@ int partition(T* array, int size, Compare cmp) {
     pivot = size - 1;
     int i = 0;
     int j = 0;
-    
-    // while (j <= size - 2) {
-    //     for ( ; cmp(array[i], array[pivot]); i++) {}
-    //     for (j = i + 1; !cmp(array[j], array[pivot]); j++) {}
-    //     std::swap(array[i], array[j]);
-    // }
-    // return i;
 
     while (j <= size - 2) {
         if (cmp(array[pivot], array[j])) {
@@ -56,11 +49,8 @@ int partition(T* array, int size, Compare cmp) {
 template<typename T, typename Compare = isLess<T>>
 int kStatMedium3(T* array, int size, int k, Compare cmp = Compare()) {
     int p = 0;
-    // int mid_value = 0;
 
     do {
-        // mid_value = medium3_value<T, Compare>(array, size, cmp);
-        // std::swap(array[mid_value], array[size - 1]);
         p = partition<T, Compare>(array, size, cmp);
         if (k >= p) {
             array += p;
