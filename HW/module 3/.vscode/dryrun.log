@@ -1,6 +1,0 @@
-make --dry-run --always-make --keep-going --print-directory
-make: Entering directory '/home/sklaa00/main_course/first/algorithms/HW/module 3'
-make: Leaving directory '/home/sklaa00/main_course/first/algorithms/HW/module 3'
- 
-make: *** No targets specified and no makefile found.  Stop.
-

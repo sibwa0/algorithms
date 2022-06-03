@@ -3,8 +3,6 @@
 
 #include "graph_interface.h"
 
-using std::vector;
-
 // list graph
 class ListGraph : public IGraph {
 public:

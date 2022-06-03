@@ -14,12 +14,12 @@ public:
 
 	virtual ~SetGraph() = default;
 
-	virtual void addEdge( int from, int to ) = 0;
+	virtual void addEdge( int from, int to ) override;
 
-	virtual int verticesCount() const = 0;
+	virtual int verticesCount() const override;
 
-	virtual std::vector<int> getNextVertices( int vertex ) const = 0;
-	virtual std::vector<int> getPrevVertices( int vertex ) const = 0;
+	virtual std::vector<int> getNextVertices( int vertex ) const override;
+	virtual std::vector<int> getPrevVertices( int vertex ) const override;
 
 private:
     vector<set<int>> _set_graph;

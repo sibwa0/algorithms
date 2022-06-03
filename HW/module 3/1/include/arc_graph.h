@@ -8,15 +8,16 @@ using std::pair;
 class ArcGraph : public IGraph {
 public:
     ArcGraph(int count);
-	virtual ~ArcGraph() = default;
     ArcGraph(const IGraph& graph);
 
-	virtual void addEdge( int from, int to ) = 0;
+	virtual ~ArcGraph() = default;
 
-	virtual int verticesCount() const = 0;
+	virtual void addEdge( int from, int to ) override;
 
-	virtual vector<int> getNextVertices( int vertex ) const = 0;
-	virtual vector<int> getPrevVertices( int vertex ) const = 0;
+	virtual int verticesCount() const override;
+
+	virtual vector<int> getNextVertices( int vertex ) const override;
+	virtual vector<int> getPrevVertices( int vertex ) const override;
 
 private:
     vector<pair<int, int>> _arc_graph;

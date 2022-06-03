@@ -5,6 +5,6 @@ set(CMAKE_CXX_STANDARD 17)
 
 include_directories(include)
 
-file(GLOB sources "${PROJECT_SOURCE_DIR}/src")
+file(GLOB SOURCES ./src/*.cpp)
 
-add_executable(${PROJECT_NAME} ${sources})
+add_executable(${PROJECT_NAME} ${SOURCES} main.cpp)
