@@ -1,4 +1,4 @@
 # Algorithms
 Technopark BMSTU first semester, C++ implemetations.
-<br\>
+<br/>
 All tasks in cpp-files.
