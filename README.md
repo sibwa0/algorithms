@@ -1,2 +1,3 @@
 # Algorithms
-Technopark BMSTU, C++ implemetations, all tasks in cpp-files
+Technopark BMSTU first semester, C++ implemetations.
+All tasks in cpp-files.
